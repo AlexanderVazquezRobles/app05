@@ -7,9 +7,10 @@ def calcular_imc(txtPeso,txtAltura,lblIMC,page):
         imc=peso/(altura**2)
         lblIMC.value=f"Tu IMC es de: {imc:.2f}"
         page.update()
-        
-    def cerrar_dialogo():
-        page.dialog.open=False
+    
+
+    def cerrar_dialogo(e):
+        page.dialog.open=False 
         page.update()
         
     if imc<18.5:
@@ -48,7 +49,8 @@ def calcular_imc(txtPeso,txtAltura,lblIMC,page):
             ]
         )
 
-
+except ValueError:
+    
 def main(page: ft.Page):
     page.title = "Calculadora de IMC"
     page.bgcolor = "#da6349"
